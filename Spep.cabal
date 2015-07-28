@@ -1,0 +1,41 @@
+name:                Spep
+version:             0.1.0.0
+synopsis:            Specailty Proguramming Lanugage on GitHub
+description:         Please see README.md
+homepage:            http://github.com/eiel/Spep
+license:             MIT
+license-file:        LICENSE
+author:              Tomohiko Himura
+maintainer:          eiel.hal@gmail.com
+-- copyright:           
+category:            Web
+build-type:          Simple
+-- extra-source-files:  
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Lib
+  build-depends:       base >= 4.7 && < 5, github
+  default-language:    Haskell2010
+
+executable spep
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base, github
+                     , Spep
+  default-language:    Haskell2010
+
+-- test-suite new-template-test
+--   type:                exitcode-stdio-1.0
+--   hs-source-dirs:      test
+--   main-is:             Spec.hs
+--   build-depends:       base
+--                      , new-template
+--   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+--   default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/eiel/spep
